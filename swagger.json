@@ -1,0 +1,31 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "TrailService API",
+      "description": "API for managing trails",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/trails": {
+        "get": {
+          "summary": "Retrieve all trails",
+          "responses": {
+            "200": {
+              "description": "A list of trails",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "trail_id": {"type": "integer"},
+                    "name": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
