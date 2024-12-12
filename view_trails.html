@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Trails</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.name }}</h1>
+        <h2>Available Trails</h2>
+        <ul>
+            {% for trail in trails %}
+                <li><strong>{{ trail.name }}</strong> - {{ trail.distance }} - {{ trail.duration }}<br>{{ trail.description }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.name }}</h1>
+        <h2>Add a New Trail</h2>
+        <form method="post">
+            <label>Trail Name:</label>
+            <input type="text" name="trail_name" required>
+            <label>Distance:</label>
+            <input type="text" name="distance" required>
+            <label>Duration:</label>
+            <input type="text" name="duration" required>
+            <label>Description:</label>
+            <textarea name="description" required></textarea>
+            <button type="submit">Add Trail</button>
+        </form>
+        <h2>Existing Trails</h2>
+        <ul>
+            {% for trail in trails %}
+                <li><strong>{{ trail.name }}</strong> - {{ trail.distance }} - {{ trail.duration }}<br>{{ trail.description }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
